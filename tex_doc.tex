@@ -1,0 +1,120 @@
+\documentclass[12pt,epsfig,color,russian]{book}
+\usepackage[russian]{babel}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage[normalem]{ulem}
+
+% Преамбула
+\title{Общая физика}
+\author{Егоров Вячеслав Георгиевич}
+\date{\today} % Дата создания или любая другая дата
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{\stretch{1}} % Добавляет вертикальное пространство перед изображением
+    
+    % Название книги
+    {\Huge\bfseries Лекции по общей физике\par}
+    \vspace{1.5cm}
+    
+    % Автор(ы)
+    {\Large Егоров Вячеслав Георгиевич\par}
+    \vspace{2cm}
+    
+    % Вставка изображения
+    \includegraphics[width=0.8\textwidth]{photos/Egorov.jpg}
+ %   \vspace{3cm}
+    
+    % Дополнительная информация
+  %  {\large Дополнительная информация\par}
+    
+ %   \vspace*{\stretch{2}} % Добавляет вертикальное пространство после изображения
+\end{titlepage}
+
+%\maketitle % Создает титульную страницу с указанными выше заголовком, автором и датой
+
+\frontmatter
+% Здесь может идти содержание, предисловие, благодарности и т.д.
+
+% Adding table of contents
+\tableofcontents
+\newpage
+
+\chapter{Введение}
+% Текст введения	
+\input{introduction.tex}
+
+\mainmatter
+% Здесь начинается основное содержание книги
+
+\chapter{Общий обзор,  план лекций и основные понятия}
+\input{GP001/GP001_section.tex}
+
+\topmargin=0cm
+\hoffset -30mm
+\voffset -12mm
+\setlength{\unitlength}{1mm}
+\parindent=10mm
+\textheight=250mm
+\textwidth=185mm
+\captionsetup{font={sf,Large}}
+
+\chapter{Классическая механика}
+\input{GP002/GP002_section.tex}
+
+\chapter{Динамика}
+\input{GP003/GP003_section.tex}
+
+\chapter{Работа и энергия}
+\input{GP004/GP004_section.tex}
+
+\chapter{Движение твердого тела}
+\input{GP005/GP005_section.tex}
+
+\chapter{Движение жидкости}
+\input{GP006/GP006_section.tex}
+
+\chapter{Элементы СТО}
+\input{GP007/GP007_section.tex}
+
+\chapter{Молекулярная физика}
+\input{GP008/GP008_section.tex}
+
+\chapter{Распределение Максвелла}
+\input{GP009/GP009_section.tex}
+
+\chapter{Микро- и макро-явления в газах}
+\input{GP010/GP010_section.tex}
+
+\chapter{Реальные газы}
+\input{GP011/GP011_section.tex}
+
+\chapter{Основы термодинамики}
+\input{GP012/GP012_section.tex}
+
+\chapter{Молекулярные явления в жидкостях}
+\input{GP013/GP013_section.tex}
+
+\chapter{Колебания и волны}
+\input{GP014/GP014_section.tex}
+
+\chapter{Электростатика}
+\input{GP015/GP015_section.tex}
+
+\chapter{Классическая электронная теория (КЭТ)}
+\input{GP017/GP017_section.tex}
+
+\chapter{Электромагнитный масс-сепаратор}
+\input{GP019/GP019_section.tex}
+
+\chapter{Атомная физика}
+\input{GP028/GP028_section.tex}
+
+\backmatter
+% Ссылки, глоссарий, индекс и т.д., если необходимо
+
+\end{document}

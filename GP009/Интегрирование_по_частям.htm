@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15alpha" />
+		<meta name="keywords" content="Интегрирование по частям,Методы интегрирования,Интеграл,Функция (математика),Непрерывное отображение,Гладкая функция,Элементарные функции,Композиция функций,Неопределенный интеграл,Определенный интеграл,Производная функции" />
+		<link rel="alternate" type="application/x-wiki" title="Править" href="http://ru.wikipedia.org/w/index.php?title=%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC&amp;action=edit" />
+		<link rel="edit" title="Править" href="http://ru.wikipedia.org/w/index.php?title=%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC&amp;action=edit" />
+		<link rel="apple-touch-icon" href="http://ru.wikipedia.org/apple-touch-icon.png" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Википедия (ru)" />
+		<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<link rel="alternate" type="application/rss+xml" title="Википедия — RSS-лента" href="http://ru.wikipedia.org/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Википедия — Atom-лента" href="http://ru.wikipedia.org/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:RecentChanges&amp;feed=atom" />
+		<title>Интегрирование по частям — Википедия</title>
+		<link rel="stylesheet" href="/skins-1.5/common/shared.css?206xx" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/skins-1.5/common/commonPrint.css?206xx" type="text/css" media="print" />
+		<link rel="stylesheet" href="/skins-1.5/monobook/main.css?206xx" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/skins-1.5/chick/main.css?206xx" type="text/css" media="handheld" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?206xx" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?206xx" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?206xx" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?206xx" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="/w/extensions/FlaggedRevs/flaggedrevs.css?54" type="text/css" />
+		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" />
+		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
+		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
+		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" />
+		<link rel="stylesheet" href="/w/index.php?title=-&amp;action=raw&amp;maxage=2678400&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?206xx"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/skins-1.5";
+		var wgArticlePath = "/wiki/$1";
+		var wgScriptPath = "/w";
+		var wgScript = "/w/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://ru.wikipedia.org";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Интегрирование_по_частям";
+		var wgTitle = "Интегрирование по частям";
+		var wgAction = "view";
+		var wgArticleId = "82858";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "ru";
+		var wgContentLanguage = "ru";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = "13102507";
+		var wgVersion = "1.15alpha";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = [",	.", " 	,"];
+		var wgDigitTransformTable = ["", ""];
+		var wgMWSuggestTemplate = "http://ru.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest";
+		var wgDBname = "ruwiki";
+		var wgSearchNamespaces = [0];
+		var wgMWSuggestMessages = ["с советами", "без советов"];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?206xx"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js?206xx"></script>
+		<script type="text/javascript" src="/skins-1.5/common/mwsuggest.js?206xx"></script>
+<script type="text/javascript">/*<![CDATA[*/
+var wgNotice='';var wgNoticeLocal='';
+/*]]>*/</script>		<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/ru/centralnotice.js?206xx"></script>
+<script type="text/javascript">
+var wgFlaggedRevsParams = {"tags": {"accuracy": 2}};
+var wgFlaggedRevsParams2 = {"tags": {"reliability": 3, "completeness": 2, "npov": 2, "presentation": 1}};
+var wgStableRevisionId = 13102507;
+var wgAjaxFeedback = {"sendingMsg": "Отправка…", "sentMsg": "Спасибо!"}
+var wgAjaxReview = {"sendingMsg": "Отправка…", "sentMsg": "Проверка выполнена!", "actioncomplete": "Действие выполнено"}
+</script>
+<script type="text/javascript" src="/w/extensions/FlaggedRevs/flaggedrevs.js?54"></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Интегрирование_по_частям skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><script type='text/javascript'>if (wgNotice != '') document.writeln(wgNotice);</script></div>		<h1 id="firstHeading" class="firstHeading">Интегрирование по частям</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">Материал из Википедии — свободной энциклопедии</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Перейти к: <a href="#column-one">навигация</a>, <a href="#searchInput">поиск</a></div>			<!-- start content -->
+			<p><b>Интегри́рование по частя́м</b> — один из <a href="/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B_%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" title="Методы интегрирования">способов</a> нахождения <a href="/wiki/%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D0%BB" title="Интеграл">интеграла</a>. Суть метода в следующем: если подынтегральная <a href="/wiki/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_(%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0)" title="Функция (математика)">функция</a> представима в виде произведения двух <a href="/wiki/%D0%9D%D0%B5%D0%BF%D1%80%D0%B5%D1%80%D1%8B%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" title="Непрерывное отображение">непрерывных</a> и <a href="/wiki/%D0%93%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" title="Гладкая функция">гладких</a> функций (каждая из которых может быть как <a href="/wiki/%D0%AD%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%BD%D1%8B%D0%B5_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8" title="Элементарные функции">элементарной</a> функцией, так и <a href="/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9" title="Композиция функций">композицией</a>), то справедливы формулы</p>
+<p>для <a href="/wiki/%D0%9D%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D0%BB" title="Неопределенный интеграл" class="mw-redirect">неопределённого интеграла</a>:</p>
+<dl>
+<dd><img class="tex" alt="\int u\,dv=u\,v-\int v\,du" src="http://upload.wikimedia.org/math/8/c/2/8c2b2e5064ccdbaec79377818693b9a6.png" /></dd>
+</dl>
+<p>для <a href="/wiki/%D0%9E%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D0%BB" title="Определенный интеграл" class="mw-redirect">определённого</a>:</p>
+<dl>
+<dd><img class="tex" alt="\int\limits_a^b u\,dv=u\,v\,\bigg|_a^b-\int\limits_a^b v\,du" src="http://upload.wikimedia.org/math/0/e/5/0e570fad7d40a08ae62ab49fb3ad3739.png" /></dd>
+</dl>
+<p>Предполагается, что нахождение интеграла <img class="tex" alt="\int v\, du" src="http://upload.wikimedia.org/math/c/1/2/c12e500c9e01fd8a3ba8cd989a0cd170.png" /> проще, чем <img class="tex" alt="\int u\, dv\," src="http://upload.wikimedia.org/math/e/a/5/ea572ef6444df5fa3907d4c5b3ee7875.png" />. В противном случае применение метода не оправдано.</p>
+<table id="toc" class="toc" summary="Содержание">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Содержание</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a href="#.D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.84.D0.BE.D1.80.D0.BC.D1.83.D0.BB"><span class="tocnumber">1</span> <span class="toctext">Получение формул</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.D0.B4.D0.BB.D1.8F_.D0.BD.D0.B5.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B8.D0.BD.D1.82.D0.B5.D0.B3.D1.80.D0.B0.D0.BB.D0.B0"><span class="tocnumber">1.1</span> <span class="toctext">для неопределённого интеграла</span></a></li>
+<li class="toclevel-2"><a href="#.D0.B4.D0.BB.D1.8F_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE"><span class="tocnumber">1.2</span> <span class="toctext">для определённого</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B"><span class="tocnumber">2</span> <span class="toctext">Примеры</span></a></li>
+<li class="toclevel-1"><a href="#.D0.9C.D0.BD.D0.B5.D0.BC.D0.BE.D0.BD.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D0.BE"><span class="tocnumber">3</span> <span class="toctext">Мнемоническое правило</span></a></li>
+<li class="toclevel-1"><a href="#.D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"><span class="tocnumber">4</span> <span class="toctext">См. также</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "показать"; var tocHideText = "убрать"; showTocToggle(); } 
+//]]>
+</script>
+<p><a name=".D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.84.D0.BE.D1.80.D0.BC.D1.83.D0.BB" id=".D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.84.D0.BE.D1.80.D0.BC.D1.83.D0.BB"></a></p>
+<h2><span class="editsection">[<a href="/w/index.php?title=%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC&amp;action=edit&amp;section=1" title="Править секцию: Получение формул">править</a>]</span> <span class="mw-headline">Получение формул</span></h2>
+<p><a name=".D0.B4.D0.BB.D1.8F_.D0.BD.D0.B5.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B8.D0.BD.D1.82.D0.B5.D0.B3.D1.80.D0.B0.D0.BB.D0.B0" id=".D0.B4.D0.BB.D1.8F_.D0.BD.D0.B5.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B8.D0.BD.D1.82.D0.B5.D0.B3.D1.80.D0.B0.D0.BB.D0.B0"></a></p>
+<h3><span class="editsection">[<a href="/w/index.php?title=%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC&amp;action=edit&amp;section=2" title="Править секцию: для неопределённого интеграла">править</a>]</span> <span class="mw-headline">для неопределённого интеграла</span></h3>
+<p>Функции <img class="tex" alt="\textstyle\mathit{u}" src="http://upload.wikimedia.org/math/c/0/d/c0d9179ecb0628b13abdfbbdb8038fcc.png" /> и <img class="tex" alt="\textstyle\mathit{v}" src="http://upload.wikimedia.org/math/3/c/6/3c63871c071b91d6840df5e9c5360f35.png" /> <a href="/wiki/%D0%93%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" title="Гладкая функция">гладкие</a>, следовательно, возможно <a href="/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8" title="Производная функции">дифференцирование</a>:</p>
+<dl>
+<dd><img class="tex" alt="d(u\,v)=du\,v+u\,dv" src="http://upload.wikimedia.org/math/7/c/1/7c18705bbe02243ca34892adb36eb273.png" /></dd>
+</dl>
+<p>Эти функции также непрерывны, значит можно взять интеграл от обеих частей равенства:</p>
+<dl>
+<dd><img class="tex" alt="\int d(u\,v)=\int du\,v+\int u\,dv" src="http://upload.wikimedia.org/math/6/6/5/6651a1431ff20c388994cbea47cb8b0d.png" /></dd>
+</dl>
+<p>Операция интегрирования <a href="/wiki/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%B0%D1%8F_%D1%82%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0" title="Основная теорема анализа">обратна</a> дифференцированию:</p>
+<dl>
+<dd><img class="tex" alt="u\,v=\int du\,v+\int u\,dv" src="http://upload.wikimedia.org/math/e/9/e/e9eb3288afe0f60c8f3a56a6e88024e9.png" /></dd>
+</dl>
+<p>После перестановок:</p>
+<dl>
+<dd><img class="tex" alt="\int u\,dv=u\,v-\int v\,du" src="http://upload.wikimedia.org/math/8/c/2/8c2b2e5064ccdbaec79377818693b9a6.png" /></dd>
+</dl>
+<p><a name=".D0.B4.D0.BB.D1.8F_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE" id=".D0.B4.D0.BB.D1.8F_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE"></a></p>
+<h3><span class="editsection">[<a href="/w/index.php?title=%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC&amp;action=edit&amp;section=3" title="Править секцию: для определённого">править</a>]</span> <span class="mw-headline">для определённого</span></h3>
+<p>В целом аналогично случаю неопределённого интеграла:</p>
+<dl>
+<dd><img class="tex" alt="d(u\,v)=du\,v+u\,dv" src="http://upload.wikimedia.org/math/7/c/1/7c18705bbe02243ca34892adb36eb273.png" /></dd>
+<dd><img class="tex" alt="\int\limits_a^b d(u\,v)=\int\limits_a^b du\,v+\int\limits_a^b u\,dv" src="http://upload.wikimedia.org/math/a/a/8/aa893390777d953cff847e032b00468f.png" /></dd>
+<dd><img class="tex" alt="\int\limits_a^b u\,dv=u\,v\,\bigg|_a^b-\int\limits_a^b v\,du" src="http://upload.wikimedia.org/math/0/e/5/0e570fad7d40a08ae62ab49fb3ad3739.png" /></dd>
+</dl>
+<p><a name=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B" id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B"></a></p>
+<h2><span class="editsection">[<a href="/w/index.php?title=%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC&amp;action=edit&amp;section=4" title="Править секцию: Примеры">править</a>]</span> <span class="mw-headline">Примеры</span></h2>
+<ul>
+<li><img class="tex" alt="\int x\cos x \,dx = \int x\,d(\sin x) =x\sin x - \int \sin x \,dx= x\sin x + \cos x + C" src="http://upload.wikimedia.org/math/e/0/c/e0c6f04b2581aaa01c6be11d1b2b752e.png" /></li>
+<li><img class="tex" alt="\int e^x\,x\,dx=\int x\,(e^x\,dx)=\int x\,de^x=x\,e^x-\int e^x\,dx=x\,e^x-e^x+C" src="http://upload.wikimedia.org/math/7/5/9/759ce037b4ae38f3e8b6a77751639c52.png" /></li>
+</ul>
+<ul>
+<li>Иногда метод применяется несколько раз:</li>
+</ul>
+<dl>
+<dd><img class="tex" alt="\int x^2\sin x \,dx=\int x^2\,d(-\cos x)=-x^2\cos x-\int -2x\cos x\,dx=" src="http://upload.wikimedia.org/math/6/4/8/64824102f6a705469aea32f4b9f4923f.png" /></dd>
+<dd><img class="tex" alt="=-x^2\cos x+\int 2x\,d(\sin x)=-x^2\cos x + 2x \sin x - \int 2\sin x \,dx = -x^2\cos x + 2x \sin x + 2 \cos x + C" src="http://upload.wikimedia.org/math/f/5/8/f5848b4f9b2bf638dcd9a597a80569c8.png" /></dd>
+</dl>
+<ul>
+<li>Данный метод также используется для нахождения интегралов от <a href="/wiki/%D0%AD%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%BD%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" title="Элементарная функция" class="mw-redirect">элементарных</a> функций:</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><img class="tex" alt="\int \ln x\,dx=x\ln x-\int \frac{1}{x}x\,dx=x\ln x-x+C" src="http://upload.wikimedia.org/math/7/6/2/7626863893d65274b4d611c1b2b6f9e7.png" /></dd>
+<dd><img class="tex" alt="\int \operatorname{arctg}\,x\,dx=x\,\operatorname{arctg}\,x-\int \frac{x}{1+x^2}\,dx=x\,\operatorname{arctg}\,x-\frac{1}{2}\ln(1+x^2)+C" src="http://upload.wikimedia.org/math/b/6/c/b6c6dc632045d5b08648cf6983302873.png" /></dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>В некоторых случаях интегрирование по частям не даёт прямого ответа:</li>
+</ul>
+<dl>
+<dd><img class="tex" alt="I_1=\int e^{\alpha x}\,\sin {\beta x}\,dx=" src="http://upload.wikimedia.org/math/6/a/2/6a2c071e398927a0f1545df31b282c05.png" /></dd>
+<dd><img class="tex" alt="=\int e^{\alpha x}\,d\Big(-\frac{1}{\beta}\cos{\beta x}\Big)=-\frac{1}{\beta}\,e^{\alpha x}\,\cos {\beta x}+\frac{\alpha}{\beta} \int e^{\alpha x}\,\cos{\beta x}\,dx=-\frac{1}{\beta}\,e^{\alpha x}\,\cos{\beta x}+\frac{\alpha}{\beta}\,I_2" src="http://upload.wikimedia.org/math/b/3/5/b359263c2976682cad14ca0a469d220e.png" /></dd>
+</dl>
+<dl>
+<dd><img class="tex" alt="I_2=\int e^{\alpha x}\,\cos {\beta x}\,dx=" src="http://upload.wikimedia.org/math/c/1/9/c19b9d8787005ca3d52b426fe5d7b7e3.png" /></dd>
+<dd><img class="tex" alt="=\int e^{\alpha x}\,d\Big(\frac{1}{\beta}\sin{\beta x}\Big)=\frac{1}{\beta}\,e^{\alpha x}\,\sin {\beta x}-\frac{\alpha}{\beta} \int e^{\alpha x}\,\sin{\beta x}\,dx=\frac{1}{\beta}\,e^{\alpha x}\,\sin{\beta x}-\frac{\alpha}{\beta}\,I_1" src="http://upload.wikimedia.org/math/b/e/f/beff4505ec651ecd2ef559bcb1a0aac3.png" /></dd>
+</dl>
+<dl>
+<dd>Таким образом один интеграл выражается через другой:</dd>
+<dd><img class="tex" alt="\begin{cases}
+     I_1=-\frac{1}{\beta}\,e^{\alpha x}\,\cos{\beta x}+\frac{\alpha}{\beta}\,I_2 \\
+     I_2=\frac{1}{\beta}\,e^{\alpha x}\,\sin{\beta x}-\frac{\alpha}{\beta}\,I_1
+\end{cases}" src="http://upload.wikimedia.org/math/7/2/0/720707e0035a7a3a9425a5ae30d0e9a1.png" /></dd>
+</dl>
+<dl>
+<dd>Решив полученную систему, получаем:</dd>
+<dd><img class="tex" alt="I_1=\frac{e^{\alpha x}}{\alpha^2+\beta^2}\Big(\alpha\sin{\beta x}-\beta\cos{\beta x}\Big)+C" src="http://upload.wikimedia.org/math/8/8/9/8895d5869e1dcaa38be06b52430bbd73.png" /></dd>
+<dd><img class="tex" alt="I_2=\frac{e^{\alpha x}}{\alpha^2+\beta^2}\Big(\alpha\cos{\beta x}+\beta\sin{\beta x}\Big)+C" src="http://upload.wikimedia.org/math/9/c/d/9cda07fb937ffc021dd155743e3b7e0a.png" /></dd>
+</dl>
+<p><a name=".D0.9C.D0.BD.D0.B5.D0.BC.D0.BE.D0.BD.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D0.BE" id=".D0.9C.D0.BD.D0.B5.D0.BC.D0.BE.D0.BD.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D0.BE"></a></p>
+<h2><span class="editsection">[<a href="/w/index.php?title=%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC&amp;action=edit&amp;section=5" title="Править секцию: Мнемоническое правило">править</a>]</span> <span class="mw-headline">Мнемоническое правило</span></h2>
+<p>«<b>Уд</b>а<b>в</b>ил <b>и в в</b>о<b>ду</b>» (<b>у дв ив вду</b>) — мнемонический способ запоминания формулы</p>
+<dl>
+<dd><img class="tex" alt="\int udv=uv-\int vdu" src="http://upload.wikimedia.org/math/9/5/9/9598233741e970e4d7710ffb9606f1bc.png" /></dd>
+</dl>
+<p><a name=".D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5" id=".D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></a></p>
+<h2><span class="editsection">[<a href="/w/index.php?title=%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC&amp;action=edit&amp;section=6" title="Править секцию: См. также">править</a>]</span> <span class="mw-headline">См. также</span></h2>
+<ul>
+<li><a href="/wiki/%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D0%BB" title="Интеграл">Интеграл</a></li>
+<li><a href="/wiki/%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D0%BB_%D0%A0%D0%B8%D0%BC%D0%B0%D0%BD%D0%B0" title="Интеграл Римана">Интеграл Римана</a></li>
+<li><a href="/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B_%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" title="Методы интегрирования">Методы интегрирования</a></li>
+<li><a href="/wiki/%D0%94%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%90%D0%B1%D0%B5%D0%BB%D1%8F" title="Дискретное преобразование Абеля">Дискретное преобразование Абеля</a> — аналог интегрирования по частям для сумм.</li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 88/1000000
+Post-expand include size: 0/2048000 bytes
+Template argument size: 0/2048000 bytes
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key ruwiki:pcache:idhash:82858-0!1!0!!ru!2 and timestamp 20090317203811 -->
+<div class="printfooter">
+Источник — «<a href="http://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC">http://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC</a>»</div>
+			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Categories" title="Служебная:Categories">Категории</a>:&#32;<span dir='ltr'><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7" title="Категория:Математический анализ">Математический анализ</a></span> | <span dir='ltr'><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D0%B8%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5" title="Категория:Интегральное исчисление">Интегральное исчисление</a></span></div></div>			<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Просмотры</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC" title="Содержание статьи [c]" accesskey="c">Статья</a></li>
+				 <li id="ca-talk"><a href="/wiki/%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC" title="Обсуждение содержания страницы [t]" accesskey="t">Обсуждение</a></li>
+				 <li id="ca-edit"><a href="/w/index.php?title=%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC&amp;action=edit" title="Эту статью можно изменять. Перед сохранением изменений, пожалуйста, нажмите кнопку предварительного просмотра для визуальной проверки результата [e]" accesskey="e">Править</a></li>
+				 <li id="ca-history"><a href="/w/index.php?title=%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h">история</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Личные инструменты</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:UserLogin&amp;returnto=%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o">Представиться / зарегистрироваться</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(http://upload.wikimedia.org/wikipedia/ru/b/bc/Wiki.png);" href="/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Заглавная страница [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Навигация</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Перейти на заглавную страницу">Заглавная страница</a></li>
+				<li id="n-browse"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_%D0%BF%D0%BE_%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F%D0%BC" title="Поиск по категориям">Рубрикация</a></li>
+				<li id="n-index"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%91%D1%8B%D1%81%D1%82%D1%80%D1%8B%D0%B9_%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81" title="Поиск по двум первым буквам">Индекс А — Я</a></li>
+				<li id="n-featured"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%98%D0%B7%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8" title="Статьи, считающиеся лучшими статьями проекта">Избранные статьи</a></li>
+				<li id="n-randompage"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Random" title="Посмотреть случайную страницу [x]" accesskey="x">Случайная статья</a></li>
+				<li id="n-currentevents"><a href="/wiki/%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB:%D0%A2%D0%B5%D0%BA%D1%83%D1%89%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F" title="Статьи о текущих событиях в мире">Текущие события</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Поиск</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" title="Искать это слово [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Перейти" title="Перейти к странице, имеющей в точности такое название" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Найти" title="Найти страницы, содержащие указанный текст" />
+			</div></form>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-participation'>
+		<h5>Участие</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-bug_in_article"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BE%D0%B1_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%D1%85">Сообщить об ошибке</a></li>
+				<li id="n-portal"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB_%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0" title="О проекте, о том, что вы можете сделать, где что находится">Портал сообщества</a></li>
+				<li id="n-forum"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A4%D0%BE%D1%80%D1%83%D0%BC" title="Форум участников Википедии">Форум</a></li>
+				<li id="n-recentchanges"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:RecentChanges" title="Список последних изменений [r]" accesskey="r">Свежие правки</a></li>
+				<li id="n-newpages"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:NewPages" title="Список недавно созданных статей">Новые страницы</a></li>
+				<li id="n-help"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0" title="Справочник по проекту «Википедия»">Справка</a></li>
+				<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/%D0%A1%D0%B1%D0%BE%D1%80_%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2" title="Поддержите нас">Пожертвования</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Инструменты</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:WhatLinksHere/%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC" title="Список всех страниц, которые ссылаются на эту страницу [j]" accesskey="j">Ссылки сюда</a></li>
+				<li id="t-recentchangeslinked"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:RecentChangesLinked/%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k">Связанные правки</a></li>
+<li id="t-specialpages"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:SpecialPages" title="Список служебных страниц [q]" accesskey="q">Спецстраницы</a></li>
+				<li id="t-print"><a href="/w/index.php?title=%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC&amp;printable=yes" rel="alternate" title="Версия для печати этой страницы [p]" accesskey="p">Версия для печати</a></li>				<li id="t-permalink"><a href="/w/index.php?title=%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC&amp;oldid=13102507" title="Постоянная ссылка на эту версию страницы">Постоянная ссылка</a></li><li id="t-cite"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Cite&amp;page=%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%82%D1%8F%D0%BC&amp;id=13102507">Цитировать страницу</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>На других языках</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a href="http://ar.wikipedia.org/wiki/%D8%AA%D9%83%D8%A7%D9%85%D9%84_%D8%A8%D8%A7%D9%84%D8%A3%D8%AC%D8%B2%D8%A7%D8%A1">العربية</a></li>
+				<li class="interwiki-bs"><a href="http://bs.wikipedia.org/wiki/Parcijalna_integracija">Bosanski</a></li>
+				<li class="interwiki-ca"><a href="http://ca.wikipedia.org/wiki/Integraci%C3%B3_per_parts">Català</a></li>
+				<li class="interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Per_partes">Česky</a></li>
+				<li class="interwiki-de"><a href="http://de.wikipedia.org/wiki/Partielle_Integration">Deutsch</a></li>
+				<li class="interwiki-en"><a href="http://en.wikipedia.org/wiki/Integration_by_parts">English</a></li>
+				<li class="interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Int%C3%A9gration_par_parties">Français</a></li>
+				<li class="interwiki-he"><a href="http://he.wikipedia.org/wiki/%D7%90%D7%99%D7%A0%D7%98%D7%92%D7%A8%D7%A6%D7%99%D7%94_%D7%91%D7%97%D7%9C%D7%A7%D7%99%D7%9D">עברית</a></li>
+				<li class="interwiki-is"><a href="http://is.wikipedia.org/wiki/Hlutheildun">Íslenska</a></li>
+				<li class="interwiki-it"><a href="http://it.wikipedia.org/wiki/Integrazione_per_parti">Italiano</a></li>
+				<li class="interwiki-ja"><a href="http://ja.wikipedia.org/wiki/%E9%83%A8%E5%88%86%E7%A9%8D%E5%88%86">日本語</a></li>
+				<li class="interwiki-km"><a href="http://km.wikipedia.org/wiki/%E1%9E%A2%E1%9E%B6%E1%9F%86%E1%9E%84%E1%9E%8F%E1%9F%81%E1%9E%80%E1%9F%92%E1%9E%9A%E1%9E%B6%E1%9E%9B%E1%9E%8A%E1%9F%84%E1%9E%99%E1%9E%95%E1%9F%92%E1%9E%93%E1%9F%82%E1%9E%80">ភាសាខ្មែរ</a></li>
+				<li class="interwiki-ko"><a href="http://ko.wikipedia.org/wiki/%EB%B6%80%EB%B6%84%EC%A0%81%EB%B6%84">한국어</a></li>
+				<li class="interwiki-lt"><a href="http://lt.wikipedia.org/wiki/Integravimas_dalimis">Lietuvių</a></li>
+				<li class="interwiki-mk"><a href="http://mk.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%B0%D1%9A%D0%B5_%D0%BF%D0%BE_%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2%D0%B8">Македонски</a></li>
+				<li class="interwiki-nl"><a href="http://nl.wikipedia.org/wiki/Parti%C3%ABle_integratie">Nederlands</a></li>
+				<li class="interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Ca%C5%82kowanie_przez_cz%C4%99%C5%9Bci">Polski</a></li>
+				<li class="interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Integra%C3%A7%C3%A3o_por_partes">Português</a></li>
+				<li class="interwiki-sh"><a href="http://sh.wikipedia.org/wiki/Parcijalna_integracija">Srpskohrvatski / Српскохрватски</a></li>
+				<li class="interwiki-sk"><a href="http://sk.wikipedia.org/wiki/Met%C3%B3da_integrovania_per_partes">Slovenčina</a></li>
+				<li class="interwiki-sv"><a href="http://sv.wikipedia.org/wiki/Partialintegration">Svenska</a></li>
+				<li class="interwiki-zh"><a href="http://zh.wikipedia.org/wiki/%E5%88%86%E9%83%A8%E7%A9%8D%E5%88%86%E6%B3%95">中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> Последнее изменение этой страницы: 18:08, 13 января 2009.</li>
+					<li id="copyright"><small>Текстовое содержимое доступно в соответствии с <a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a>.</small><br /></li>
+					<li id="privacy"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Википедия:Политика конфиденциальности">Политика конфиденциальности</a></li>
+					<li id="about"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5" title="Википедия:Описание">Описание Википедии</a></li>
+					<li id="disclaimer"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Википедия:Отказ от ответственности">Отказ от ответственности</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served by srv220 in 0.084 secs. --></body></html>

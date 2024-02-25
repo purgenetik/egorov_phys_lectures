@@ -1,0 +1,122 @@
+
+\documentclass[12pt,epsfig,color,russian]{article}
+\usepackage[russian]{babel}
+\usepackage{epsfig}
+\usepackage{color}
+
+\topmargin=0cm
+\hoffset -30mm
+\voffset -12mm
+\setlength{\unitlength}{1mm}
+\parindent=10mm
+\textheight=250mm
+\textwidth=190mm
+\pagestyle{empty}
+
+\begin{document}
+\sf\Large
+
+
+\centerline{\underline{\Huge\bf РАБОТА и ЭНЕРГИЯ}}
+\hspace{3mm}
+Сила $\vec{f}$ вызывает перемещение тела. Характеристика ее действия -- это РАБОТА {\sl (\underline{A}ction)}.\\
+ \setlength{\unitlength}{1mm}
+  \begin{picture}(190,50)(0,0)
+   %\put(0,0){\framebox(190,40)[b]{}}
+   \put(0,5){\includegraphics{GP004F01.eps}}
+   \put(190,0){\makebox(0,0)[br]{\parbox{100mm}{
+   Не вся сила {\color{red}$\vec{f}$} принимает участие в перемещении тела, а только ее составляющая в направлении перемещения ${\color{blue}\vec{f_t}}$:\hspace{5mm} $f_t=f\cdot\cos\alpha$
+   \begin{displaymath}
+   A=S\cdot f_t = S\cdot f\cdot\cos\alpha = \left(\vec{f}\cdot\vec{S}\right)
+   \end{displaymath}
+   }}}
+  \end{picture}\\
+ Здесь вертикальная составляющая $\vec{f_n}$, вес тела $\vec{p}$ и реакция опоры $\vec{f_r}$ никакой работы не производят. Сила трения $\vec{f_{TP}}$ делает {\bf отрицательную} работу, по\-скольку направлена противоположно движению: $\left(\vec{f_{TP}}\cdot\vec{S}\right)<0$.\\[1mm]
+
+ Если сила не постоянна, а меняется во время движения:\\
+ \setlength{\unitlength}{1mm}
+  \begin{picture}(190,70)(0,0)
+   %\put(0,0){\framebox(190,70)[b]{}}
+   \put(0,0){\includegraphics{GP004F02.eps}}
+   \put(190,0){\makebox(0,0)[br]{\parbox{80mm}{
+   Разобьем весь путь ($S_2-S_1$) на малые отрезки $dS$ и на каждом из отрезков посчитаем работу:
+   \begin{displaymath}
+   dA= \left(\vec{f}\cdot\vec{dS}\right)
+   \end{displaymath}
+   а затем все это просуммируем:
+   \begin{displaymath}
+   A=\int_{s_1}^{s_2} \left(\vec{f}\cdot\vec{dS}\right)\simeq\sum_i\left(f_i\cdot dS_i\right)
+   \end{displaymath}
+   }}}
+  \end{picture}\\[1mm]
+  \begin{picture}(190,64)(0,0)
+   %\put(0,0){\framebox(190,60)[b]{}}
+   \put(0,0){\includegraphics{GP004F03.eps}}
+   \put(190,-2){\makebox(0,0)[br]{\parbox{60mm}{Для криволиней\-но\-го движения надо ин\-те\-гри\-ровать (сум\-ми\-ро\-вать) по пути $S$, а не по смещению $NM$:
+   \begin{displaymath}
+   A=\oint_{N}^{M} \left(\vec{f}\cdot\vec{dS}\right)=
+   \end{displaymath}
+   \begin{displaymath}
+   \oint_{N}^{M} \left(f_xdx+f_ydy+f_zdz\right)
+   \end{displaymath}
+   }}}
+  \end{picture}
+
+\underline{\bf Мощность}
+\begin{center}
+\fbox{\parbox{180mm}{\color{blue}\bf Физ. величина, пропорциональная работе и обратно пропорциональная тому времени, за которое она совершена.}}\\[1mm]
+\end{center}
+Средняя мощность за промежуток времени $\Delta t$:
+   \begin{displaymath}
+   W=\frac{\Delta A}{\Delta t}=\frac{f\cdot \Delta S}{\Delta t}
+   \end{displaymath}
+Мгновенная мощность в данный момет:
+   \begin{displaymath}
+   W(t=\tau)=\lim_{\Delta t\rightarrow 0}\frac{\Delta A}{\Delta t}=\frac{dA}{dt}=f_t\cdot\frac{dS}{dt}=\left(\vec{f}\cdot\vec{v}\right)
+   \end{displaymath}
+
+\underline{\bf Единицы работы и мощности}
+\begin{itemize}
+\item CGS: $[s]$ = см, $\;\;\;\;[f]$ = дина = г$\cdot$см/с$^2$ \\ $\;\;\Rightarrow\hspace{10mm}[A]$ = эрг = г$\cdot$см$^2$/с$^2$\\
+    $\;\;\Rightarrow\hspace{10mm}[W]$ = эрг/с = г$\cdot$см$^2$/с$^3$
+\item SI: $\;\;\;[s]$ = м, $\;[f]$ = Ньютон (Н)= кг$\cdot$м/с$^2$ \\ $\;\;\Rightarrow\hspace{10mm}[A]$ = Джоуль (Дж) = кг$\cdot$м$^2$/с$^2 = 10^7$ эргов\\
+    $\;\;\Rightarrow\hspace{10mm}[W]$ = Ватт (Вт) = кг$\cdot$м$^2$/с$^3 = 10^7$ эргов/c
+\item несистемные:\\
+    $\;\;\Rightarrow\hspace{10mm}[A]$ = кВт$\cdot$час = 3.6$\cdot10^6$ Дж\\
+    $\;\;\Rightarrow\hspace{10mm}[W]$ = лошадиная сила (л.с.) = 736 Вт = 0.736 кВт
+\end{itemize}
+Пример: поезд едет с $v$=72 км/час. Мощность = ?\\
+  \begin{picture}(190,40)(0,0)
+   %\put(0,0){\framebox(190,40)[b]{}}
+   \put(10,0){\includegraphics{GP004F04.eps}}
+  \end{picture}\\
+Решение: скатывающая сила = $p\cdot\sin\alpha\simeq p\cdot\alpha\simeq p\cdot\tan\alpha=0.004p$; она складывается с силой трения $f_{TP}=p\cdot\cos\alpha\cdot k_{TP}\simeq0.002p$.
+Поскольку ускорения нет, то все силы скомпенсированы, и $f=0.006p=0.006mg=6\cdot10^{-3}\cdot5\cdot10^5$ кг$\cdot9.8$ м/с$^2=29.4$ кН. Мощность = $f\cdot v=2.94\cdot10^4\cdot72000/3600$ кг$\cdot$м$^2/c^3 = 5.88\cdot10^5$ Вт = 588 кВт $\simeq$ 0.6 МВт $\simeq$ 433 л.с.
+\newpage
+\underline{\bf Кинетическая энергия}
+
+Работа силы $f$ по разгону тела от $v_1$ до $v_2$ за время $t$: $A=fs$ при ускорении $a=(v_2-v_1)/t$. Сила равна $f=ma=m(v_2-v_1)/t$. Средняя скорость $\bar{v}=(v_1+v_2)/2$, поэтому расстояние $s=t\bar{v}$. Подставив, получим:
+   \begin{displaymath}
+   A=m\cdot\frac{v_2-v_1}{t}\cdot\frac{v_1+v_2}2\cdot t=\frac{mv_2^2}2-\frac{mv_1^2}2
+   \end{displaymath}
+
+\fbox{\parbox{170mm}{\color{blue}Работа силы $f$ численно равна приращению величины $E_k=mv^2/2$, которая называется кинетической энергией.}}\\[2mm]
+
+Если имеется несколько материальных точек, образующих систему, то сказанное справедливо для каждой из них и для всей системы:
+   \begin{displaymath}
+   E_k=\sum_i\frac{m_iv_i^2}2;\;\;\;\;\;\;\;\;A=\Delta E_k
+   \end{displaymath}
+
+\fbox{\parbox{170mm}{\color{blue}Изменение кинетической энергии системы равно работе всех сил, приложенных к материальным точкам, образующим систему.}}\\[2mm]
+
+\underline{\bf Потенциальная энергия}
+
+Силовое поле -- пространство, где на тела действуют силы. Например: однородное гравитационное поле.
+
+
+
+
+
+
+
+\end{document} 

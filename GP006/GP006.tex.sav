@@ -1,0 +1,219 @@
+
+\documentclass[12pt,epsfig,color,russian]{article}
+\usepackage[russian]{babel}
+\usepackage{epsfig}
+\usepackage{color}
+
+\topmargin=0cm
+\hoffset -30mm
+\voffset -12mm
+\setlength{\unitlength}{1mm}
+\parindent=10mm
+\textheight=250mm
+\textwidth=185mm
+\pagestyle{empty}
+
+\begin{document}
+\sf\Large
+
+
+\centerline{\underline{\Huge\bf ДВИЖЕНИЕ ЖИДКОСТИ}}
+
+\underline{\bf Сплошная среда \sl(continuum)}: непрерывное $\infty$ тело, в котором воз\-мо\-ж\-но перемещение различных частей относительно друг друга.
+\begin{itemize}
+\item Упругое тв. тело: относительные сдвиги, колебания
+\item Несжимаемая жижкость: течения
+\item Сжимаемая жидкость или газ: течения, колебания
+\end{itemize}
+Гидродинамика -- часть механики, изучающая движение жидкостей.\\
+{\color{blue}Идеальная жидкость} -- несжимаемая и без вязкости (нет внутреннего трения)\\
+  \begin{picture}(190,25)(0,0)
+   %\put(0,0){\framebox(190,25)[b]{}}
+   \put(135,0){\includegraphics{GP006F01.eps}}
+   \put(0,22){\makebox(0,0)[tl]{\parbox{130mm}{
+   {\color{blue}Поле вектора скорости}: пространство, где можно провести {\color{blue}линии тока} -- касательные к ним в каждой точке совпадают с направлением скорости частиц
+   }}}
+  \end{picture}\\[10mm]
+  \begin{picture}(190,25)(0,0)
+   %\put(0,0){\framebox(190,25)[b]{}}
+   \put( 10,0){\includegraphics{GP006F2a.eps}}
+   \put(100,0){\includegraphics{GP006F2b.eps}}
+  \end{picture}\\[5mm]
+  \begin{picture}(190,52)(0,0)
+   %\put(0,0){\framebox(190,50)[b]{}}
+   \put( 125,0){\includegraphics{GP006F03.eps}}
+   {\color{red}
+   \put(129,40){\makebox(0,0)[l]{$\Delta S_1$}}
+   \put(143,35){\makebox(0,0)[l]{$\vec{v}_1$}}
+   \put(183,15){\makebox(0,0)[r]{$\Delta S_2$}}
+   \put(184,5){\makebox(0,0)[r]{$\vec{v}_2$}}
+   }
+   \put(0,52){\makebox(0,0)[tl]{\parbox{120mm}{
+  Часть жидкости, ограниченная линиями тока -- {\color{blue} трубка тока}. Линии тока образуют как бы невидимые границы: частицы жидкости их не пересекают (иначе скорость была бы направлена по-другому).  }}}
+   \put(0,0){\makebox(0,0)[bl]{\parbox{165mm}{
+   Если в трубке тока провести 2 нормальных сечения $\Delta S_1$ и $\Delta S_2$, то за единицу времени через $\Delta S_1$ протечет объем =$\Delta S_1\cdot v_1$. Если
+  }}}
+  \end{picture}\\
+  жидкость несжимаема, то через $\Delta S_2$ протечет столько же: $\Delta S_2\cdot v_2=\Delta S_1\cdot v_1$, и вообще для данной трубки
+  \begin{displaymath}
+\Delta S\cdot v=\texttt{const}\hspace{10mm}\texttt{\color{blue} -- теорема о неразрывности струи}
+  \end{displaymath}
+
+  Если $\exists$ реальная труба, то ее внутренний объем -- трубка тока. Тогда: где труба \'{у}же, там течение быстрее.
+Если трубка сужается, то скорость возрастает $\Rightarrow$ есть ускорение $\Rightarrow$ есть сила! Откуда? От разности давлений. Давление в широких местах > чем в узких.
+\newpage
+  \noindent
+  \begin{picture}(190,60)(0,0)
+   \put(0,0){\framebox(190,60)[b]{}}
+   \put( 100,0){\includegraphics{GP006F04.eps}}
+   {\color{red}
+   \put(110,52){\makebox(0,0)[b]{$S_1$}}
+   \put(188,17){\makebox(0,0)[r]{$S_2$}}
+   \put(115,40){\makebox(0,0)[l]{$\vec{v}_1$}}
+   \put(186,5){\makebox(0,0)[r]{$\vec{v}_2$}}
+   \color{blue}
+   \put(117,47){\makebox(0,0)[r]{$p_1$}}
+   \put(176,18){\makebox(0,0)[c]{$p_2$}}
+   }
+   \put(100,5){\makebox(0,0)[r]{$h_1$}}
+   \put(170,5){\makebox(0,0)[r]{$h_2$}}
+   \put(103,20){\makebox(0,0)[lb]{$h = h_1-h_2$}}
+   \put(0,60){\makebox(0,0)[tl]{\parbox{90mm}{
+   $S_{1,2}$ -- сечение\\
+   $\vec{v}_{1,2}$ -- скорость\\
+   $p_{1,2}$ -- давление\\
+   $h_{1,2}$ -- высота\\
+   $m$ -- порция жидкости (масса)\\
+   $E_{1,2}$ -- полная энергия порции\\
+   $A$ -- работа по перемещению $m$\\ от сечения 1 до сечения 2
+  }}}
+  \end{picture}\\
+\begin{displaymath}
+A=E_2-E_1,\;\;\;\;\;\;\;\;E_{1,2}=E_\texttt{кин}+E_\texttt{пот}
+\end{displaymath}
+\begin{displaymath}
+E_1=\frac{m\cdot v_1^2}2+mgh_1\;\;\;\;\;\;\;E_2=\frac{m\cdot v_2^2}2+mgh_2
+\end{displaymath}
+Пусть весь столб жидкости сдвигается за время $t$ так, что через оба сечения проходит порция $m$. В точке (1) это смещение $L_1=v_1t$, а в точке (2) -- $L_2=v_2t$. Сила, толкающая жидкость в точке (1) -- это $f_1=p_1S_1$, а сила, сопротивляющаяся движению в точке (2) -- это $f_2=-p_2S_2$ (знак "минус" именно потому, что давление $p_2$ направлено навстречу движению). Работа внешних сил
+\begin{displaymath}
+A=f_1L_1+f_2L_2=p_1S_1v_1t-p_2S_2v_2t.
+\end{displaymath}
+Приравняв $A$ и $E_2-E_1$, получим:
+\begin{displaymath}
+\frac{m\cdot v_2^2}2+mgh_2-\frac{m\cdot v_1^2}2-mgh_1=p_1S_1v_1t-p_2S_2v_2t.
+\end{displaymath}или
+\begin{equation}\label{eqn.2}
+ \frac{m\cdot v_1^2}2+mgh_1+p_1S_1v_1t=\frac{m\cdot v_2^2}2+mgh_2+p_2S_2v_2t.
+\end{equation}
+По закону неразрывности струи: $S_1v_1t=S_2v_2t$, и это -- объем $V$, занимаемый порцией $m$. Поделим ур-ние (\ref{eqn.2}) на $V$ и учтем, что $m/V$ -- это плотность $\rho$:
+{\color{blue}
+\begin{displaymath}
+\frac{\rho\cdot v_1^2}2+\rho gh_1+p_1=\frac{\rho\cdot v_2^2}2+\rho gh_2+p_2.
+\end{displaymath}
+}
+\begin{flushright}{\sl Даниил БЕРНУЛЛИ (1700-1782), СПб}\end{flushright}
+\newpage
+  \noindent
+  \begin{picture}(190,40)(0,0)
+   %\put(0,0){\framebox(190,40)[b]{}}
+   \put(20,0){\includegraphics{GP006F05.eps}}
+  \end{picture}
+\begin{displaymath}
+\frac{\rho\cdot v_A^2}2+p_A
+\hspace{7mm}=
+\hspace{7mm}\frac{\rho\cdot v_B^2}2+p_B
+\hspace{7mm}=
+\hspace{7mm}\frac{\rho\cdot v_C^2}2+p_C
+\end{displaymath}\\
+\rule{189mm}{0.3mm}\\
+  \begin{picture}(190,50)(0,0)
+   %\put(0,0){\framebox(190,50)[b]{}}
+   \put(80,0){\includegraphics{GP006F06.eps}}
+   {\color{blue}
+   \put(121,30){\makebox(0,0)[r]{$p_1$}}
+   \put(148,30){\makebox(0,0)[r]{$p_2$}}
+   }
+   \put(5,45){\makebox(0,0)[tl]{\parbox{97mm}{
+Скорость жидкости непосредственно перед отверстием трубки Пито $v_2=0$.
+\begin{displaymath}
+p_2=\frac{\rho\cdot v_1^2}2+p_1
+\end{displaymath}
+$p_2$ -- {\color{red} динамическое давление}
+   }}}
+  \end{picture}\\[2mm]
+$p_1,p_2\;\;\;\Rightarrow$ измерение скорости жидкости (флот) или газа (авиация) по разности давлений.\\
+\rule{189mm}{0.3mm}\\
+
+Струйный насос:\\
+  \begin{picture}(190,60)(0,0)
+   %\put(0,0){\framebox(190,60)[b]{}}
+   \put(0,0){\includegraphics{GP006F07.eps}}
+   \put(190,60){\makebox(0,0)[tr]{\parbox{70mm}{
+При достаточно большой скорости жидкости {\bf \color{green}A} на выходе из сопла давление там может стать < ат\-мо\-сфер\-но\-го, и жидкость {\bf \color{red}B} будет засасываться в струю. (жидкость $\Leftrightarrow$ газ)
+   }}}
+  \end{picture}\\
+  \begin{picture}(190,60)(0,0)
+   %\put(0,0){\framebox(190,60)[b]{}}
+   \put(0,0){\includegraphics{GP006F08.eps}}
+   \put(190,60){\makebox(0,0)[tr]{\parbox{130mm}{
+Весь сосуд -- как одна трубка тока. Давление и у поверхности, и у отверстия = атмосферному.
+Уравнение Бернулли:
+\begin{displaymath}
+\frac{v_1^2}2+g(h_1-h_2)=\frac{v_2^2}2
+\end{displaymath}
+Поскольку скорость у поверхности $\simeq0$, то получим:
+\begin{displaymath}
+v_2=\sqrt{2g(h_1-h_2)}=\sqrt{2gh}
+\end{displaymath}
+   }}}
+  \end{picture}\\
+
+Закон сохранения количества движения: струя приобрела скорость вправо; если бы система была замкнутой, то сосуд двинулся бы влево.\\ \\
+  \begin{picture}(190,60)(0,0)
+   %\put(0,0){\framebox(190,60)[b]{}}
+   \put(0,0){\includegraphics{GP006F09.eps}}
+   \put(0,51){\makebox(0,0)[l]{Пусть есть изогнутая труба постоянного сечения. За время $t$ через $S_1$ про-}}
+   \put(0,43){\makebox(0,0)[l]{течет жидкость массой $m=\rho S_1v_1t$. Импульс этой массы: $\vec{p}_1=\rho S_1v_1t\vec{v}_1$.}}
+   \put(190,36){\makebox(0,0)[tr]{\parbox{90mm}{
+   Импульс той же массы жидкости, прходящей через $S_2$, равен $\vec{p}_2=\rho S_2v_2t\vec{v}_2$. Поскольку $S_1$=$S_2$=$S$, то и $v_1$=$v_2$=$v$, и потому $\Delta \vec{p}$ = ($\vec{p}_2$--$\vec{p}_1$)= $\rho Svt(\vec{v}_2-\vec{v}_1)$. По 2зН это должно
+   }}}
+  \end{picture}\\
+  равняться импульсу сил, давящих на жидкость со стороны трубы: $\Delta \vec{p}$=$\vec{F}$t, и тогда, поделив на $t$, получаем:
+  \begin{displaymath}
+  \vec{F}= \rho Sv(\vec{v}_2-\vec{v}_1)
+  \end{displaymath}
+  Противоположная ей сила $\vec{F'}=-\vec{F}$ действует со стороны текущей жидкости на стенку трубы. \\
+  \begin{picture}(190,45)(0,0)
+   %\put(0,0){\framebox(190,45)[b]{}}
+   \put(0,-5){\includegraphics{GP006F10.eps}}
+   \put(190,0){\makebox(0,0)[br]{\parbox{130mm}{Применение: Ветер, отражаясь от косого паруса, меняет свое направление, а сила реакции давит на парус и толкает яхту вперед. Лопатки турбины меняют направление потока газа, а сила реакции создает момент, который крутит турбину.
+   }}}
+  \end{picture}
+  \newpage
+  {\bf Реактивные двигатели.} 
+  
+  По закону сохранения импульса: если газ выталкивается влево, то камера сгорания (вместе с ракетой) отталкивается вправо.
+  
+  Турбореактивные двигатели (авиация): воздух для горения берется извне и нагнетается в камеру сгорания турбиной, которую крутит сам же двигатель.
+  
+  И.В.Мещерский (1859 -- 1935): теория движения тел с переменной массой.
+  \begin{displaymath}
+  \frac d{dt}(m\vec{v})=\vec{F}+\frac{dm_1}{dt}\vec{v}_1-\frac{dm_2}{dt}\vec{v}_2
+  \end{displaymath}
+  Конкретно для ракеты с массой $m$ и относительной скоростью выбрасывания газов $u$:
+  \begin{displaymath}
+  m\vec{a}=\vec{F}+\frac{dm}{dt}\vec{u}
+  \end{displaymath}
+  
+  К.Э.Циолковский (1857 -- 1935): характеристическая скорость $V$ -- максимальная, после выработки всего топлива.
+  \begin{displaymath}
+  V=I\cdot\ln\left(\frac{M_1}{M_2}\right)
+  \end{displaymath}
+  $M_1$ -- начальная масса\\
+  $M_2$ -- конечная масса\\
+  $I$ -- удельный импульс $\equiv$ отношение $\frac{\texttt{тяга двигателя}}{\texttt{масса топлива за секунду}}$\\
+  Выход из тупика: многоступенчатые носители.\\
+  
+  {\bf Движение вязкой жидкости}
+   
+\end{document} 
